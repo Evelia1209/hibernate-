@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="pojo.User" table="Usertable"><!-- table value值是表名 -->
+        <id name="id" column="ID">
+            <generator class="native"/>  <!-- 自动生成 编号 从1 开始-->
+        </id>
+        <!-- 用户名 -->
+        <property name="userName" type="java.lang.String" column="USERNAME" not-null = "true"/>
+        <!-- 密码 -->
+        <property name="userPwd" type="java.lang.String" column="USERPWD" not-null = "true"/>
+        <!-- 用户名 -->
+        <property name="role" type="java.lang.Integer" column="ROLE" not-null = "true"/>
+    </class>
+
+</hibernate-mapping>
